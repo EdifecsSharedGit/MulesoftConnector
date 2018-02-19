@@ -15,6 +15,7 @@ import javax.net.ssl.X509TrustManager;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.*;
 
+import org.apache.log4j.Logger;
 import org.glassfish.jersey.client.authentication.HttpAuthenticationFeature;
 import org.mule.api.annotations.Config;
 import org.mule.api.annotations.Connector;
@@ -31,6 +32,7 @@ public class EdifecsXEngineServerConnector {
     @Config
     ConnectionConfiguration config;
     
+    public static Logger logger = Logger.getLogger(EdifecsXEngineServerConnector.class);
     
     /**
      * Custom processor
@@ -40,7 +42,7 @@ public class EdifecsXEngineServerConnector {
      * @throws Exception 
      */
     @Processor
-    public InputStream validate(@Payload String transaction, @Placement(group = "Custom Options") @FriendlyName("Key-Value parameters") Map<String, String> customOptions) throws Exception{
+    public InputStream validate(@Payload String transaction, @Placement(group = "Custom Options") @FriendlyName("Key-Value parameters") Map<String, String> customOptions) {
     	InputStream response =  this.postData(transaction, customOptions,  "validate");
     	return response;
     }
@@ -69,7 +71,7 @@ public class EdifecsXEngineServerConnector {
 			return stream;
 		}
 		catch(Exception e){
-			e.printStackTrace();
+			logger.debug(e.getMessage());
 			if (stream == null)
 				stream = new ByteArrayInputStream(e.getMessage().getBytes(StandardCharsets.UTF_8));
 			return stream;
