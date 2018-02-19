@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.mule.modules</groupId>
     <artifactId>edifecs-x-engine-server-connector</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>mule-module</packaging>
     <name>Mule EdifecsXEngineServer Anypoint Connector</name>
 
@@ -35,13 +35,22 @@
         </dependency>
     </dependencies>
     
-    
     <repositories>
-        <repository>
-            <id>mulesoft-releases</id>
-            <name>MuleSoft Releases Repository</name>
-            <url>http://repository.mulesoft.org/releases/</url>
-            <layout>default</layout>
+	        <repository>
+	            <id>mulesoft-releases</id>
+	            <name>MuleSoft Releases Repository</name>
+	            <url>http://repository.mulesoft.org/releases/</url>
+	            <layout>default</layout>
+	        </repository>
+	    </repositories>
+    
+    <distributionManagement>
+     <repository>
+          <uniqueVersion>false</uniqueVersion>
+          <id>mycloudhub</id>
+          <name>Cloud Hub</name>
+          <url>https://anypoint.mulesoft.com/cloudhub/</url>
+          <layout>default</layout>
         </repository>
-    </repositories>
+    </distributionManagement>
 </project>
