@@ -1,0 +1,3 @@
+<!-- BEGIN_INCLUDE(edifecs-x-engine-server:greet) -->
+    <edifecs-x-engine-server:greet config-ref="" friend="#[map-payload:friend]" />
+<!-- END_INCLUDE(edifecs-x-engine-server:greet) -->
