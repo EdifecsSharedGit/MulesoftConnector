@@ -32,7 +32,7 @@ public class EdifecsXEngineServerConnector {
     @Config
     ConnectionConfiguration config;
     
-    public static Logger logger = Logger.getLogger(EdifecsXEngineServerConnector.class);
+    private static Logger logger = Logger.getLogger(EdifecsXEngineServerConnector.class);
     
     /**
      * Custom processor
@@ -71,7 +71,7 @@ public class EdifecsXEngineServerConnector {
 			return stream;
 		}
 		catch(Exception e){
-			logger.debug(e.getMessage());
+			logger.error("Exception while set up SSL context!", e);
 			if (stream == null)
 				stream = new ByteArrayInputStream(e.getMessage().getBytes(StandardCharsets.UTF_8));
 			return stream;
