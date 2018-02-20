@@ -32,7 +32,7 @@ public class EdifecsXEngineServerConnector {
     @Config
     ConnectionConfiguration config;
     
-    private static Logger logger = Logger.getLogger(EdifecsXEngineServerConnector.class);
+    private static final Logger logger = Logger.getLogger(EdifecsXEngineServerConnector.class);
     
     /**
      * Custom processor
