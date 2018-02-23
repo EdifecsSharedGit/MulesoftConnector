@@ -1,11 +1,12 @@
-Mulesoft Edifecs Connector TODO: Make the description
+Edifecs XEngine Server Connector v 1.0.0 Release Notes 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu diam libero. Mauris sollicitudin libero at tortor pharetra molestie. Nam suscipit a leo venenatis faucibus. Pellentesque elementum massa ipsum, sed elementum mauris porta sed. Nunc malesuada magna ac mattis iaculis. In sapien arcu, dignissim sed ultrices ac, ultrices nec urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam nec sagittis quam. Vestibulum ornare sodales velit vel pulvinar. Sed nec urna elit. Sed sed lacus vitae arcu bibendum aliquam quis volutpat orci. Ut odio leo, elementum vel ligula ac, congue pretium massa. Ut ac ante porta, pellentesque leo at, hendrerit ligula. Pellentesque feugiat lectus mollis, euismod neque vitae, tempor mauris.
+Introduced features:
 
-Nulla vestibulum, est quis mattis tincidunt, massa risus varius felis, eu molestie leo risus sed nibh. Vivamus mollis auctor finibus. Nam facilisis mattis tempor. Aenean mattis vitae ex et accumsan. In accumsan metus eleifend lectus tincidunt, vel rutrum ex suscipit. Nunc suscipit tellus eget magna molestie bibendum. Aliquam congue nunc ac consectetur consequat. Praesent pharetra massa massa, et convallis lectus laoreet et.
+ - Sending input data to the Edifecs XEngine Server infrastructure through the REST API
+ - Adding required key-value parameters to the REST URL
+ - Basic Authentication for REST connections
+ - Support of the following healthcare standards: HIPAA/X12, NCPDP, HL7
+ - Support of the following custom formats: XML, JSON, Positional Flat Files, CSV, COBOL, IBM Mainframe
 
-Praesent iaculis ac nunc non convallis. Donec commodo, diam quis lobortis convallis, erat ligula fringilla leo, ut vulputate lectus libero non odio. Vivamus nunc tortor, eleifend eget elit cursus, elementum sagittis erat. Ut nunc leo, fringilla eu mauris eget, ultrices blandit turpis. Vivamus non imperdiet lorem. Sed vel nisl in dolor auctor tincidunt at quis neque. Vestibulum pulvinar urna a risus aliquam, sit amet bibendum felis sagittis. Sed ultricies ultricies arcu, at iaculis nisi. Sed ac eros odio. Cras quis pulvinar ipsum. Cras est lectus, imperdiet et ex ut, condimentum gravida tellus. Vivamus cursus nec dui finibus molestie. Praesent finibus sem id tortor pellentesque vulputate.
-
-Duis lorem enim, congue id tristique non, hendrerit in nunc. Integer pellentesque lorem sed tincidunt tempus. Donec sodales tellus mauris, ac pharetra nisl pulvinar sed. Vivamus sagittis dolor quam, eu volutpat nibh pharetra id. Donec in porta arcu, ut facilisis ligula. In mattis augue laoreet elit pulvinar imperdiet. Pellentesque porta id risus et feugiat. Fusce ligula enim, elementum in ultricies non, iaculis sed orci.
-
-Pellentesque posuere, nulla finibus dictum malesuada, mi nisl cursus justo, quis cursus velit tellus a turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vestibulum turpis sit amet est venenatis bibendum. Curabitur a aliquam quam, ut ultrices lorem. Praesent eget quam ac urna accumsan dignissim. Phasellus venenatis sem lacus, eu tincidunt nisi posuere sit amet. Aenean auctor sem felis, a aliquet risus elementum a. Donec vel molestie ligula. Suspendisse ac ex vitae ipsum viverra consequat congue sed quam. Pellentesque libero justo, pharetra sit amet mi at, convallis finibus quam. Vestibulum accumsan est vitae arcu consectetur tempor. Integer sem sapien, interdum vel tortor vitae, pharetra facilisis justo.
+Requirements:
+XEngine Server 8.8.1 and later

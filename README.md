@@ -1,34 +1,41 @@
-# EdifecsXEngineServer Anypoint Connector
+# Edifecs XEngine Server Anypoint Connector
 
-[Connector description including destination service or application with]
+The solution is designed for Mulesoft customers who want to perform data validation or other processing of healthcare transactions using Edifecs XEngine Server.
+The solution supports the following types of transactions: HIPAA/X12, NCPDP, HL7. 
+Custom popular formats are also supported, for example, XML, JSON, Positional Flat Files, CSV, COBOL, IBM Mainframe, and many more.
+Integration is performed through the REST API that submits data to the pre-built Edifecs XEngine Server route. A separate license of Edifecs XEngine Server is required.
 
 # Mule supported versions
-Examples:
-Mule 3.4.x, 3.5.x
-Mule 3.4.1
 
-# [Destination service or application name] supported versions
-Example:
-Oracle E-Business Suite 12.1 and above.
+Mule 3.9.x
+
+# XEngine Server supported versions
+
+Edifecs XEngine Server 8.8.1 and later
 
 #Service or application supported modules
-Example:
-Oracle CRM
-Oracle Financials
-or 
-Salesforce API v.24
-Salesforce Metadata API
 
+Edifecs XEngine Server REST API. 
 
 # Installation 
-For beta connectors you can download the source code and build it with devkit to find it available on your local repository. Then you can add it to Studio
 
-For released connectors you can download them from the update site in Anypoint Studio. 
-Open Anypoint Studio, go to Help → Install New Software and select Anypoint Connectors Update Site where you’ll find all avaliable connectors.
+1. Download the Edifecs XEngine Server Connector from the latest Anypoint Studio web site and install it.
+2. Open Anypoint Studio, click Help, click Install New Software, and then select Anypoint Connectors Update Site. All available connectors are displayed.
+3. Select the Edifecs XEngine Server Anypoint Connector and install it.
 
 #Usage
-For information about usage our documentation at http://github.com/mulesoft/edifecs-x-engine-server.
+
+1. Add the connector to the flow pane and connect it to other connectors.
+2. Configure the following required settings:
+
+	* The REST URL of the corresponding XEngine Server REST service.
+	* A user login and a password for the Basic Authentication of the Edifecs XEServer REST service.
+	* An operation to perform (currently, validation is the only available option)
+	* Other key-value pairs (URL parameters) if required. 
+
+3. Start the flow and submit your data to the input of the connector. For this, you can use the File, HTTP client, or other components.
+4. Verify the processing results.  For this, you can connect an output of the Edifecs XEngine Server Connector to another Mulesoft connector, for example, File, HTTP client, and so on.
 
 # Reporting Issues
 
-We use GitHub:Issues for tracking issues with this connector. You can report new issues at this link http://github.com/mulesoft/edifecs-x-engine-server/issues.
+We use GitHub:Issues for tracking issues with this connector. You can report new issues at https://github.com/EdifecsSharedGit/MulesoftConnector

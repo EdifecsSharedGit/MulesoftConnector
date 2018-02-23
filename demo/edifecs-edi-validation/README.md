@@ -1,5 +1,5 @@
-# EdifecsXEngineServer Anypoint Connector Demo
+# Edifecs XEngine Server Anypoint Connector Demo
 
-Demo represents basic abilities of the Connector, which is used to connect to Edifecs XEserver infrastructure. 
+The demo introduces basic capabilities of the connector that is used to connect to the Edifecs XEServer infrastructure through the REST API. 
 
-837P EDI transaction is read from the File System and is sent to the BackEnd (XEServer side) via Mulesoft Edifecs XEServer Connector. After backend processing result is saved in file system. 
+The 837P EDI transaction is read from the file system and is sent to backend (the XEServer side) through the Mulesoft Edifecs XEServer Connector. The backend processing results are  saved to the file system. 
