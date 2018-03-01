@@ -1,4 +1,5 @@
-Edifecs XEngine Server Connector v 1.0.0 Release Notes 
+= Edifecs XEngine Server Connector Release Notes
+:keywords: Edifecs, XEngine, XEngine Server, Helathcare, EDI, HIPAA, EDI Gateway, Healthcare Payer, Healthcare Insurace, Data Validation
 
 Introduced features:
 
@@ -8,5 +9,33 @@ Introduced features:
  - Support of the following healthcare standards: HIPAA/X12, NCPDP, HL7
  - Support of the following custom formats: XML, JSON, Positional Flat Files, CSV, COBOL, IBM Mainframe
 
-Requirements:
-XEngine Server 8.8.1 and later
+link:/edifecs-x-engine-server-connector[Edifecs XEngine Server Connector User Guide]
+
+== 1.1 - 02/28/2018
+
+=== Version 1.1 Compatibility
+
+[%header%autowidth]
+|===
+|Edifecs XEngine Server |8.8.1
+|Mule Runtime | 3.5
+|===
+
+
+=== Features
+ 
+ Submitting data to Edifecs XEngine Server - Sending input data to the Edifecs XEngine Server infrastructure through the REST API
+ Ability to pass any name-value metadata - Adding required key-value parameters to the REST URL
+ Support for basic authentication while submitting the request - Basic Authentication for REST connections
+ Support for HIPAA/X12, NCPDP, HL7 and other standards - Support of the following healthcare standards: HIPAA/X12, NCPDP, HL7
+ Support for proprietary standards - Support of the following custom formats: XML, JSON, Positional Flat Files, CSV, COBOL, IBM Mainframe
+
+
+
+=== Support Resources
+
+* Learn how to link:/mule-user-guide/v/3.8/installing-connectors[Install Anypoint Connectors] using Anypoint Exchange.
+* Access the link:http://forum.mulesoft.org/mulesoft[MuleSoft Forum] to pose questions and get help from Mule’s broad community of users.
+* To access MuleSoft’s expert support team, link:http://www.mulesoft.com/mule-esb-subscription[subscribe] and log in to MuleSoft’s link:http://www.mulesoft.com/support-login[Customer Portal].
+
+

@@ -1,13 +1,98 @@
-Mulesoft Edifecs XEngine Server Connector
+Read through this user guide to understand how to set up and configure a basic flow using the connector. Review the connector operations and functionality using the https://github.com/EdifecsSharedGit/MulesoftConnector[Technical Reference] along side the link:https://www.mulesoft.com/exchange#!/?filters=Edifecs&sortBy=rank[demo applications].
+
+MuleSoft maintains this connector under the link:/mule-user-guide/v/3.8/anypoint-connectors#connector-categories[Certified ] support policy.
+
+[[important-concepts]]
+== Important Concepts
+
+This document assumes that you are familiar with Mule,
+link:/mule-user-guide/v/3.8/anypoint-connectors[Anypoint Connectors], and
+link:/anypoint-studio/v/6[Anypoint Studio]. To increase your familiarity with Studio, consider completing a link:/anypoint-studio/v/6/basic-studio-tutorial[Anypoint Studio Tutorial]. This page requires basic knowledge of link:/mule-user-guide/v/3.8/mule-concepts[Mule Concepts], link:/mule-user-guide/v/3.8/elements-in-a-mule-flow[Elements in a Mule Flow], and link:/mule-user-guide/v/3.8/global-elements[Global Elements].
+
+[[requirements]]
+== Hardware and Software Requirements
 
 Prerequisites:
 
 * Mule Anypoint Studio
 * XEngine Server 8.8.1 or later with the configured infrastructure that includes the following:
  		- The processing flow/route (that processes input data)
-		- A configured REST service (that receives data and submits 		  it for processing. 
+		- A configured REST service (that receives data and submits it for processing. 
 
 Note: The default infrastructure that you can use to test a connector is configured on an outer box, and all settings of this box are predefined in the connector settings. 
+
+[[install]]
+== How to Install
+
+You can install the connector in Anypoint Studio using the instructions in
+link:/getting-started/anypoint-exchange#installing-a-connector-from-anypoint-exchange[Installing a Connector from Anypoint Exchange].
+
+[[ns-schema]]
+== Connector Namespace and Schema
+
+When designing your application in Anypoint Studio, when you drag the connector from the palette onto the Anypoint Studio canvas, Studio automatically populates the XML code with the connector *namespace* and *schema location*.
+
+*Namespace:* `+http://www.mulesoft.org/schema/mule/connector+` +
+*Schema Location:* `+http://www.mulesoft.org/schema/mule/connector/current/mule-connector.xsd+`
+
+[TIP]
+If you are manually coding the Mule application in Studio's XML editor or another text editor, define the namespace and schema location in the header of your *Configuration XML*, inside the `<mule>` tag.
+
+[source, xml,linenums]
+----
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:connector="http://www.mulesoft.org/schema/mule/connector"
+      xsi:schemaLocation="
+               http://www.mulesoft.org/schema/mule/core
+               http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+               http://www.mulesoft.org/schema/mule/connector
+               http://www.mulesoft.org/schema/mule/connector/current/mule-connector.xsd">
+
+      <!-- put your global configuration elements and flows here -->
+
+</mule>
+----
+
+*Note:* Use `current` in the schema path. Studio interprets this to the current Mule version.
+
+[[maven]]
+== Maven Dependency Information
+
+For Maven dependency management, include this XML snippet in your `pom.xml` file.
+
+[source,xml,linenums]
+----
+<dependency>
+  <groupId>org.mule.modules</groupId>
+  <artifactId>edifecs-x-engine-server-connector</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+</dependency>
+----
+
+[TIP]
+====
+Inside the `<version>` tags, put the desired version number, the word `RELEASE` for the latest release, or `SNAPSHOT` for the latest available version. The available versions are:
+
+* *x.y.z*
+====
+
+[[configure]]
+== How to Configure
+
+Place the connector in your flow as applicable for your use case.
+
+To use the "Edifecs XEngine Server Connector" connector in your Mule application, you must configure a global "Edifecs XEngine Server Connector" element that can be used by the "Edifecs XEngine Server Connector" connector (read more about  link:/mule-user-guide/v/3.8/global-elements[Global Elements]). The "Edifecs XEngine Server Connector" connector provides the following global configuration(s), requiring the following credentials: *BaseURL*, *Operation*, *User*, *Password*
+
+[%header%autowidth.spread]
+|===
+|Field |Description
+|*User* |Enter the username for basic authentciation.
+|*Password* |Enter the corresponding password.
+|*BaseURL* |Url to Edifecs XEngine Server instance.
+|*Operation* |REST API operation to be called at *BaseURL*.
+
+== Deployment
 
 To use the Edifecs XEngine Server Anypoint Connector:
 
@@ -24,3 +109,13 @@ To use the Edifecs XEngine Server Anypoint Connector:
 
 6. Start the flow and submit your data to the input of the connector. For this, you can use the File, HTTP client, or other components.
 7. Verify the processing results.  For this, you can connect an output of the Edifecs XEngine Server Connector to another Mulesoft connector, for example, File, HTTP client, and so on.
+
+[[operations]]
+== Operations
+
+It is possible to define any custom operation with use of Edifcs XEngine Server. The requirement is that operation name defined in the Edifecs orchestration matches the *Operation* specified on the component. 
+
+
+== Common Use Cases
+
+The typical use of the component is, for example, when a HIPAA file (e.g. 837 Claim) needs to be validated and resulting error report to be sent back to provider. To do that user would need to create a corresponding validation orchestration in Edifecs XEngine Server. Then this orchestration needs to be exposed via the REST endpoint from XEngine Server under some operation, for example "validate". Once the Edifecs Profile with the route is started, in Mulesoft user needs to configure Edifecs XEngine Server Connector to make the call to the validation piece and then dump the results/reports to whatever destination is intended.

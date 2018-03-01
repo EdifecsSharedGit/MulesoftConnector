@@ -1,3 +1,8 @@
+/****************************************
+* Copyright (c) 2003-2018 Edifecs, Inc. The software in this package is 
+* published under the terms of the Commercial Software license, a copy 
+* of which has been included with this distribution in the LICENSE.md file.
+****************************************/
 package org.mule.modules.edifecsxengineserver;
 
 import java.io.ByteArrayInputStream;
@@ -27,7 +32,7 @@ import org.mule.modules.edifecsxengineserver.config.ConnectionConfiguration;
 import org.mule.api.annotations.licensing.RequiresEnterpriseLicense;
 
 @RequiresEnterpriseLicense(allowEval = true)
-@Connector(name="edifecs-x-engine-server", friendlyName="Edifecs XEngine Server Connector")
+@Connector(name="edifecs-x-engine-server", friendlyName="Edifecs XEngine Server Connector", minMuleVersion = "3.5")
 public class EdifecsXEngineServerConnector {
 
     @Config
