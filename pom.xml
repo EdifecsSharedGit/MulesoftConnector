@@ -10,14 +10,15 @@
 
     <parent>
         <groupId>org.mule.tools.devkit</groupId>
-        <artifactId>mule-devkit-parent</artifactId>
-        <version>3.9.0</version>
+        <artifactId>certified-mule-connector-parent</artifactId>
+        <version>3.9.3</version>
     </parent>
 
     <properties>
-        <category>Community</category>
+        <category>Certified</category>
         <licensePath>LICENSE.md</licensePath>
         <devkit.studio.package.skip>false</devkit.studio.package.skip>
+		<ctf.connector.class>org.mule.modules.org.mule.modules.edifecsxengineserver.EdifecsXEngineServerConnector</ctf.connector.class>
     </properties>
     
     <dependencies>
@@ -44,6 +45,24 @@
 	        </repository>
 	    </repositories>
     
+	<build>
+		<plugins>
+		   <plugin>
+				<groupId>org.mule.certification</groupId>
+				<artifactId>project-structure-validation</artifactId>
+				<version>1.0.6</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>validate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>	
+	
     <distributionManagement>
       <repository>
         <id>mule-ee-releases</id>

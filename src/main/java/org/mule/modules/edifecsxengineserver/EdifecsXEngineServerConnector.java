@@ -24,8 +24,9 @@ import org.mule.api.annotations.display.FriendlyName;
 import org.mule.api.annotations.display.Placement;
 import org.mule.api.annotations.param.Payload;
 import org.mule.modules.edifecsxengineserver.config.ConnectionConfiguration;
+import org.mule.api.annotations.licensing.RequiresEnterpriseLicense;
 
-
+@RequiresEnterpriseLicense(allowEval = true)
 @Connector(name="edifecs-x-engine-server", friendlyName="Edifecs XEngine Server Connector")
 public class EdifecsXEngineServerConnector {
 
@@ -35,11 +36,11 @@ public class EdifecsXEngineServerConnector {
     private static final Logger logger = Logger.getLogger(EdifecsXEngineServerConnector.class);
     
     /**
-     * Custom processor
+     * Edifecs XEngine Server Connector
      *
-     * @param friend Name to be used to generate a greeting message.
-     * @return A greeting message
-     * @throws Exception 
+     * @param transaction Transaction payload to validate
+	 * @param customOptions List of name-value pairs with custom metadata
+     * @return Stream with the output from the service
      */
     @Processor
     public InputStream validate(@Payload String transaction, @Placement(group = "Custom Options") @FriendlyName("Key-Value parameters") Map<String, String> customOptions) {

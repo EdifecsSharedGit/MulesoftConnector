@@ -1,0 +1,123 @@
+{
+  "minMuleVersion": "3.5.0",
+  "requiresEntitlement": false,
+  "requiresEnterpriseLicense": true,
+  "configs": [
+    {
+      "configElementName": "config",
+      "attributes": [
+        {
+          "javaTypeName": "String",
+          "fullQualifiedJavaTypeName": "java.lang.String",
+          "defaultValue": "https://xes-certification-mulesoft.collablynk.com:9058/rest",
+          "isOptional": true,
+          "isRefOnly": false,
+          "isPayload": false,
+          "isComplexType": false,
+          "isEnum": false,
+          "isString": true,
+          "typeMirror": "java.lang.String",
+          "isHttpCallback": false,
+          "isArrayOrListOrMap": false,
+          "javaName": "baseURL"
+        },
+        {
+          "javaTypeName": "String",
+          "fullQualifiedJavaTypeName": "java.lang.String",
+          "defaultValue": "MuleSoftCertification",
+          "isOptional": true,
+          "isRefOnly": false,
+          "isPayload": false,
+          "isComplexType": false,
+          "isEnum": false,
+          "isString": true,
+          "typeMirror": "java.lang.String",
+          "isHttpCallback": false,
+          "isArrayOrListOrMap": false,
+          "javaName": "user"
+        },
+        {
+          "javaTypeName": "String",
+          "fullQualifiedJavaTypeName": "java.lang.String",
+          "defaultValue": "",
+          "isOptional": true,
+          "isRefOnly": false,
+          "isPayload": false,
+          "isComplexType": false,
+          "isEnum": false,
+          "isString": true,
+          "typeMirror": "java.lang.String",
+          "isHttpCallback": false,
+          "isArrayOrListOrMap": false,
+          "javaName": "password"
+        }
+      ],
+      "javaName": "ConnectionConfiguration",
+      "friendlyName": "Edifecs REST Connection Configuration",
+      "type": "ConfigurationConfig"
+    }
+  ],
+  "attributes": [],
+  "processors": [
+    {
+      "isPaged": false,
+      "isBatch": false,
+      "samples": [],
+      "javaReturnType": {
+        "javaTypeName": "InputStream",
+        "fullQualifiedJavaTypeName": "java.io.InputStream",
+        "isOptional": false,
+        "isRefOnly": false,
+        "isPayload": false,
+        "isComplexType": false,
+        "isEnum": false,
+        "isString": false,
+        "isHttpCallback": false,
+        "description": "Stream with the output from the service"
+      },
+      "parameters": [
+        {
+          "javaTypeName": "String",
+          "fullQualifiedJavaTypeName": "java.lang.String",
+          "isOptional": false,
+          "isRefOnly": false,
+          "isPayload": true,
+          "isComplexType": false,
+          "isEnum": false,
+          "isString": true,
+          "typeMirror": "java.lang.String",
+          "isHttpCallback": false,
+          "isArrayOrListOrMap": false,
+          "javaName": "transaction",
+          "description": "Transaction payload to validate"
+        },
+        {
+          "javaTypeName": "Map\u003cString,String\u003e",
+          "fullQualifiedJavaTypeName": "java.util.Map\u003cjava.lang.String,java.lang.String\u003e",
+          "isOptional": false,
+          "isRefOnly": false,
+          "isPayload": false,
+          "isComplexType": false,
+          "isEnum": false,
+          "isString": false,
+          "typeMirror": "java.util.Map\u003cjava.lang.String,java.lang.String\u003e",
+          "isHttpCallback": false,
+          "isArrayOrListOrMap": true,
+          "javaName": "customOptions",
+          "description": "List of name-value pairs with custom metadata"
+        }
+      ],
+      "apiDocUrl": "",
+      "javaName": "validate",
+      "friendlyName": "Validate",
+      "description": "Edifecs XEngine Server Connector",
+      "xsdName": "validate"
+    }
+  ],
+  "filters": [],
+  "transformers": [],
+  "sources": [],
+  "javaName": "EdifecsXEngineServerConnector",
+  "friendlyName": "Edifecs XEngine Server Connector",
+  "xsdName": "edifecs-x-engine-server"
+}
