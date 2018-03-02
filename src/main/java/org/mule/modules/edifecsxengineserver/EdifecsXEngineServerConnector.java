@@ -32,7 +32,7 @@ import org.mule.modules.edifecsxengineserver.config.ConnectionConfiguration;
 import org.mule.api.annotations.licensing.RequiresEnterpriseLicense;
 
 @RequiresEnterpriseLicense(allowEval = true)
-@Connector(name="edifecs-x-engine-server", friendlyName="Edifecs XEngine Server Connector", minMuleVersion = "3.5")
+@Connector(name="edifecs-x-engine-server", friendlyName="Edifecs XEngine Server Connector", minMuleVersion = "3.8")
 public class EdifecsXEngineServerConnector {
 
     @Config

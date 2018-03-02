@@ -11,9 +11,9 @@ Introduced features:
 
 link:/edifecs-x-engine-server-connector[Edifecs XEngine Server Connector User Guide]
 
-== 1.1 - 02/28/2018
+== Edifecs XEngine Server Connector Version 1.0.0 - February 28, 2018
 
-=== Version 1.1 Compatibility
+=== Version 1.0.0 Compatibility
 
 [%header%autowidth]
 |===

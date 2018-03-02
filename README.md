@@ -10,7 +10,7 @@ Edifecs, Inc.
 
 ## Supported Mule runtime versions
 
-Mule 3.5, 3.9.x
+Mule 3.8, 3.9.x
 
 ## XEngine Server supported versions
 
