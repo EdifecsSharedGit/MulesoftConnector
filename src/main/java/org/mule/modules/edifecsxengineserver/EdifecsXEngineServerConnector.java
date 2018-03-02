@@ -49,8 +49,7 @@ public class EdifecsXEngineServerConnector {
      */
     @Processor
     public InputStream validate(@Payload String transaction, @Placement(group = "Custom Options") @FriendlyName("Key-Value parameters") Map<String, String> customOptions) {
-    	InputStream response =  this.postData(transaction, customOptions,  "validate");
-    	return response;
+    	return this.postData(transaction, customOptions,  "validate");
     }
 
 
@@ -62,24 +61,27 @@ public class EdifecsXEngineServerConnector {
         this.config = config;
     }
     
-	private InputStream postData(String content, Map<String, String> customOptions, String urlCommand){
+	
+    private InputStream postData(String content, Map<String, String> customOptions, String urlCommand){
 		
 		HttpAuthenticationFeature auth = HttpAuthenticationFeature.basic(config.getUser(), config.getPassword());
 		InputStream stream = null;
 		try{
 			Client client = ignoreSSLClient();
 			client.register(auth);
-			String URL =  config.getBaseURL() + "/" + urlCommand + (customOptions.size() != 0 ? "?" +this.joinParams(customOptions, "=", "&"):"");
-			WebTarget webTarget = client.target(URL);
-			Invocation.Builder invocationBuilder =  webTarget.request(MediaType.TEXT_PLAIN).acceptEncoding("utf-8"); // 
+			String url =  config.getBaseURL() + "/" + urlCommand + (customOptions!= null && customOptions.size() != 0 ? "?" +this.joinParams(customOptions, "=", "&"):"");
+			WebTarget webTarget = client.target(url);
+			Invocation.Builder invocationBuilder =  webTarget.request(MediaType.TEXT_PLAIN).acceptEncoding("utf-8");
 			Response response = invocationBuilder.post(Entity.text(content)); 
 			stream = response.readEntity(InputStream.class);
 			return stream;
 		}
 		catch(Exception e){
-			logger.error("Exception while set up SSL context!", e);
-			if (stream == null)
-				stream = new ByteArrayInputStream(e.getMessage().getBytes(StandardCharsets.UTF_8));
+			logger.error("Exception while performing operation!", e);
+			if (stream == null){
+				String message = e.getMessage() == null? "Processing Error": e.getMessage();
+				stream = new ByteArrayInputStream(message.getBytes(StandardCharsets.UTF_8));
+			}
 			return stream;
 		}
 		
@@ -111,8 +113,12 @@ public class EdifecsXEngineServerConnector {
 	    SSLContext sslcontext = SSLContext.getInstance("TLS");
 
 	    sslcontext.init(null, new TrustManager[]{new X509TrustManager() {
-	        public void checkClientTrusted(X509Certificate[] arg0, String arg1) throws CertificateException {}
-	        public void checkServerTrusted(X509Certificate[] arg0, String arg1) throws CertificateException {}
+	        public void checkClientTrusted(X509Certificate[] arg0, String arg1) throws CertificateException {
+	        	//there is no need to implement this method
+	        }
+	        public void checkServerTrusted(X509Certificate[] arg0, String arg1) throws CertificateException {
+	        	//there is no need to implement this method
+	        }
 	        public X509Certificate[] getAcceptedIssuers() { return new X509Certificate[0]; }
 	    }}, new java.security.SecureRandom());
 

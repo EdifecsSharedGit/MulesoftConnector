@@ -18,7 +18,7 @@
         <category>Certified</category>
         <licensePath>LICENSE.md</licensePath>
         <devkit.studio.package.skip>false</devkit.studio.package.skip>
-		<ctf.connector.class>org.mule.modules.org.mule.modules.edifecsxengineserver.EdifecsXEngineServerConnector</ctf.connector.class>
+		<ctf.connector.class>org.mule.modules.edifecsxengineserver.EdifecsXEngineServerConnector</ctf.connector.class>
     </properties>
     
     <dependencies>
@@ -76,4 +76,5 @@
         <uniqueVersion>false</uniqueVersion>
       </snapshotRepository>
     </distributionManagement>
+    
 </project>
