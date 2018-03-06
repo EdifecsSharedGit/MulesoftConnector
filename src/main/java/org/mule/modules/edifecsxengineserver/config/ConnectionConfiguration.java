@@ -1,8 +1,6 @@
-/****************************************
-* Copyright (c) 2003-2018 Edifecs, Inc. The software in this package is 
-* published under the terms of the Commercial Software license, a copy 
-* of which has been included with this distribution in the LICENSE.md file.
-****************************************/
+/**
+ * (c) 2003-2018 Edifecs, Inc. The software in this package is published under the terms of the Commercial Software license, a copy of which has been included with this distribution in the LICENSE.md file.
+ */
 package org.mule.modules.edifecsxengineserver.config;
 
 import org.mule.api.annotations.Configurable;
