@@ -20,11 +20,11 @@ public class ConnectionConfiguration {
 	String baseURL;
 	
 	@Configurable
-	@Default("MuleSoftCertification")
+	@Default("")
 	String user;
 	
 	@Configurable
-	@Default("Ad#$CeR1fi_1")
+	@Default("")
 	@Password
 	String password;
 	
