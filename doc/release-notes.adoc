@@ -11,14 +11,14 @@ Introduced features:
 
 link:/edifecs-x-engine-server-connector[Edifecs XEngine Server Connector User Guide]
 
-== Edifecs XEngine Server Connector Version 1.0.0 - February 28, 2018
+== Edifecs XEngine Server Connector Version 1.0.0 - March 6, 2018
 
 === Version 1.0.0 Compatibility
 
 [%header%autowidth]
 |===
 |Edifecs XEngine Server |8.8.1
-|Mule Runtime | 3.5
+|Mule Runtime | 3.8
 |===
 
 
