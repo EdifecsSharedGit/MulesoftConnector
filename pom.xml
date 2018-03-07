@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.mule.modules</groupId>
     <artifactId>edifecs-x-engine-server-connector</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>mule-module</packaging>
     <name>Mule EdifecsXEngineServer Anypoint Connector</name>
 
